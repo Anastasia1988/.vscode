@@ -1,0 +1,170 @@
+[
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "namedtuple",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "namedtuple",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_date",
+        "kind": 2,
+        "importPath": "1",
+        "description": "1",
+        "peekOfCode": "def get_date(text):  \n    num_week, week_day, month = text.split()\n    try: \n        if 5 > int(num_week.split(\"-\") [0]) > 0:\n            num_week = int(num_week.split(\"-\") [0]) \n        else:\n            return \"\\nнеправильно введен номер дня недели\"\n    except:\n        return \"\\nнеправильно введен номер дня недели\"\n    if week_day in WEEKDAYS:",
+        "detail": "1",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "1",
+        "description": "1",
+        "peekOfCode": "logger = logging.getLogger(\"log\") \nMONTHS = {\n'января': 1,\n'февраля': 2,\n'марта': 3,\n'апреля': 4,\n'мая': 5,\n'июня': 6,\n'июля': 7,\n'августа': 8,",
+        "detail": "1",
+        "documentation": {}
+    },
+    {
+        "label": "MONTHS",
+        "kind": 5,
+        "importPath": "1",
+        "description": "1",
+        "peekOfCode": "MONTHS = {\n'января': 1,\n'февраля': 2,\n'марта': 3,\n'апреля': 4,\n'мая': 5,\n'июня': 6,\n'июля': 7,\n'августа': 8,\n'сентября': 9,",
+        "detail": "1",
+        "documentation": {}
+    },
+    {
+        "label": "WEEKDAYS",
+        "kind": 5,
+        "importPath": "1",
+        "description": "1",
+        "peekOfCode": "WEEKDAYS = {\n'понедельник': 0,\n'вторник': 1,\n'среда': 2,\n'четверг': 3,\n'пятница': 4,\n'суббота': 5,\n'воскресенье': 6\n}\nDATE = namedtuple(\"DATE\", \"day month year\") ",
+        "detail": "1",
+        "documentation": {}
+    },
+    {
+        "label": "DATE",
+        "kind": 5,
+        "importPath": "1",
+        "description": "1",
+        "peekOfCode": "DATE = namedtuple(\"DATE\", \"day month year\") \ndef get_date(text):  \n    num_week, week_day, month = text.split()\n    try: \n        if 5 > int(num_week.split(\"-\") [0]) > 0:\n            num_week = int(num_week.split(\"-\") [0]) \n        else:\n            return \"\\nнеправильно введен номер дня недели\"\n    except:\n        return \"\\nнеправильно введен номер дня недели\"",
+        "detail": "1",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "1",
+        "description": "1",
+        "peekOfCode": "parser = argparse.ArgumentParser(usage='Не введены значения аргументами')\nparser.add_argument(dest='num_week', type=str)\nparser.add_argument(dest='week_day', type=str)\nparser.add_argument(dest='month', type=str)\nargs = parser.parse_args()\nprint(get_date(args.num_week + \" \" + args.week_day + \" \" + args.month))\nprint(get_date(input(\"введите текст вида: '1-й четверг ноября' -> \")))",
+        "detail": "1",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "1",
+        "description": "1",
+        "peekOfCode": "args = parser.parse_args()\nprint(get_date(args.num_week + \" \" + args.week_day + \" \" + args.month))\nprint(get_date(input(\"введите текст вида: '1-й четверг ноября' -> \")))",
+        "detail": "1",
+        "documentation": {}
+    },
+    {
+        "label": "get_data",
+        "kind": 2,
+        "importPath": "2",
+        "description": "2",
+        "peekOfCode": "def get_data(path): \n    filename = os.path.splitext(os.path.basename(path))[0]\n    extension = os.path.splitext(os.path.basename(path))[1]\n    par = os.path.split(os.path.dirname(path))[1]\n    fl = os.path.isdir(path) \n    d = DATA(name=filename, extension = extension, flag=fl, parent=par) \n    logger.info(DATA(d.name, d.extension, d.flag, d.parent)) \n    return d\nparser = argparse.ArgumentParser(usage='Не введены значения аргументами')\nparser.add_argument(dest='path', type=str)",
+        "detail": "2",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "2",
+        "description": "2",
+        "peekOfCode": "logger = logging.getLogger(\"log\") \nDATA = namedtuple(\"DATA\", \"name extension flag parent\") \ndef get_data(path): \n    filename = os.path.splitext(os.path.basename(path))[0]\n    extension = os.path.splitext(os.path.basename(path))[1]\n    par = os.path.split(os.path.dirname(path))[1]\n    fl = os.path.isdir(path) \n    d = DATA(name=filename, extension = extension, flag=fl, parent=par) \n    logger.info(DATA(d.name, d.extension, d.flag, d.parent)) \n    return d",
+        "detail": "2",
+        "documentation": {}
+    },
+    {
+        "label": "DATA",
+        "kind": 5,
+        "importPath": "2",
+        "description": "2",
+        "peekOfCode": "DATA = namedtuple(\"DATA\", \"name extension flag parent\") \ndef get_data(path): \n    filename = os.path.splitext(os.path.basename(path))[0]\n    extension = os.path.splitext(os.path.basename(path))[1]\n    par = os.path.split(os.path.dirname(path))[1]\n    fl = os.path.isdir(path) \n    d = DATA(name=filename, extension = extension, flag=fl, parent=par) \n    logger.info(DATA(d.name, d.extension, d.flag, d.parent)) \n    return d\nparser = argparse.ArgumentParser(usage='Не введены значения аргументами')",
+        "detail": "2",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "2",
+        "description": "2",
+        "peekOfCode": "parser = argparse.ArgumentParser(usage='Не введены значения аргументами')\nparser.add_argument(dest='path', type=str)\nargs = parser.parse_args()\nprint(get_data(args.path))",
+        "detail": "2",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "2",
+        "description": "2",
+        "peekOfCode": "args = parser.parse_args()\nprint(get_data(args.path))",
+        "detail": "2",
+        "documentation": {}
+    }
+]
